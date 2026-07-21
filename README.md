@@ -1,2 +1,54 @@
 # random-generator
 난수발생기_Manual키워드 용
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>난수 발생기</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f4f4f4;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+    pre {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎲 난수 발생기</h1>
+  <button onclick="generate()">난수 생성</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function generate() {
+      const data = {
+        requestId: crypto.randomUUID(),
+        timestamp: Date.now()
+      };
+
+      document.getElementById("output").textContent =
+        JSON.stringify(data, null, 2);
+    }
+  </script>
+
+</body>
+</html>
